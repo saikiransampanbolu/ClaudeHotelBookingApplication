@@ -1,6 +1,6 @@
 # Code Review (Step 6)
 
-Self-review of the implementation against the capstone checklist, using the `code-reviewer` agent's rubric.
+Self-review of the implementation against the capstone checklist, using the `code-review-agent`'s rubric.
 
 | Area | Result | Evidence / action |
 |------|--------|-------------------|

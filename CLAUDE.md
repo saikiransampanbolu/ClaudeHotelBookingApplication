@@ -6,7 +6,7 @@ Capstone: build a hotel booking app from `docs/requirements.md` using Claude age
 - `docs/` — SDLC artifacts (requirements, architecture, design-review, impl-plan, review, verification, PR)
 - `server/` — Express API + `node:sqlite` (Node >= 22). `npm test` runs `node:test`.
 - `client/` — React + Vite SPA.
-- `.claude/agents` — `code-reviewer`, `verifier`. `.claude/skills/sdlc-step` — step workflow. `.claude/hooks` — guards.
+- `.claude/agents` — one `*-agent.agent.md` per SDLC step plus `orchestrator-agent`. `.claude/instructions` — matching `*-agent-instructions.md`. `.claude/skills/sdlc-step` — step workflow. `.claude/hooks` — guards.
 
 ## Commands
 - `npm install` (root installs both workspaces), `npm run seed`, `npm run dev` (API :3001, UI :5173), `npm test`, `npm run build`, `npm start`.
