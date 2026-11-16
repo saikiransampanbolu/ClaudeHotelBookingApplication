@@ -43,13 +43,13 @@ export function createApp({
 
   const app = express();
   app.disable('x-powered-by');
-  app.set('trust proxy', 1);
+  if (process.env.TRUST_PROXY) app.set('trust proxy', Number(process.env.TRUST_PROXY) || process.env.TRUST_PROXY);
   app.use((_req, res, next) => {
     res.set({
       'X-Content-Type-Options': 'nosniff',
       'X-Frame-Options': 'DENY',
       'Referrer-Policy': 'same-origin',
-      'Content-Security-Policy': "default-src 'self'; img-src 'self' https: data:; style-src 'self' 'unsafe-inline'; frame-ancestors 'none'",
+      'Content-Security-Policy': "default-src 'self'; img-src 'self' https: data:; frame-ancestors 'none'",
     });
     if (config.isProd) res.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
     next();

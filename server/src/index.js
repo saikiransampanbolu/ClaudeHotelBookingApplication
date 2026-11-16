@@ -6,7 +6,7 @@ import { seed } from './seed.js';
 const db = createDb(config.dbPath);
 // First run: make sure hotel + inventory exist. Admin users come from `npm run seed`.
 seed(db, {
-  adminEmail: process.env.SEED_ADMIN_EMAIL,
+  adminEmail: process.env.SEED_ADMIN_EMAIL || 'admin@hotel.test',
   adminPassword: process.env.SEED_ADMIN_PASSWORD,
 });
 
